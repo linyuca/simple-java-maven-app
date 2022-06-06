@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Install python3') {
             steps {
-                sh 'apt-get update'
+                sh 'sudo apt-get update'
             }
         }
         stage('Install pyats') {
             steps {
-                sh 'apt-get install python3.6'
+                sh 'sudo apt-get install python3.6'
             }        
         }
         stage('Build') {
