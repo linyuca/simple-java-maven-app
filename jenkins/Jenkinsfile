@@ -1,6 +1,16 @@
 pipeline {
     agent any
     stages {
+        stage('Install python3') {
+            steps {
+                sh 'sudo apt-get update'
+            }
+        }
+        stage('Install pyats') {
+            steps {
+                sh 'sudo apt-get install python3.6'
+            }        
+        }
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
